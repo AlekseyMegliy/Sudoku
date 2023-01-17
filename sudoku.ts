@@ -9,7 +9,7 @@ for(let cell of cells){
     cells_mas.push(cell);
 }
 function clearing(){
-    console.log(member_mas_row.length)
+
     for(let j=0; j<=8; j++){
         for(let i=0; i<=  8; i++){
             member_mas_row[j][i] =0
@@ -19,31 +19,121 @@ function clearing(){
         }
     }
 }
-
+let done = false
 function start(){
-
-// cells_mas[0].value=`${Math.floor(Math.random() * 9 + 1) }`;
-// member_mas_row[0][0]=Number(cells_mas[0].value);
-    for(let j=0; j<=8; j++){
-        for(let i=0; i<=8; i++){
-            function calc(){
-                let new_value:number =Math.floor(Math.random() * 9 + 1);
-                if(member_mas_row[j].includes(new_value) || member_mas_col[i].includes(new_value)){
-                    calc()
-                } else{
-                    cells_mas[j*9+i].value = `${new_value}`
-                    member_mas_row[j][i] =new_value
-                    member_mas_col[i][j] = new_value
-                    
-                } 
+    
+    
+        for(let j=0; j<=8; j++){
+            for(let i=0; i<=  8; i++){
+                member_mas_row[j][i] =0
+                member_mas_col[i][j] =0
+                cells_mas[j*9+i].value='';
+                console.log(i)
             }
-            calc();       
         }
-        
+        for(let j=0; j<=8; j++){
+            for(let i=0; i<=8; i++){
+                if(j>=6){
+
+                    if(i+1+j*3+2>9){
+                        if(i+1+j*3+2-9 > 9){
+                            if(i+1+j*3+2-9 > 9*2){
+                                cells_mas[j*9+i].value = `${i+1+j*3+2-9*3}`
+                                member_mas_row[j][i] = i+1+j*3+2-9*3
+                                member_mas_col[i][j] = i+1+j*3+2-9*3
+                            }
+                            else{
+                                cells_mas[j*9+i].value = `${i+1+j*3+2-9*2}`
+                                member_mas_row[j][i] = i+1+j*3+2-9*2
+                                member_mas_col[i][j] = i+1+j*3+2-9*2
+                            }
+                                
+                        }
+                        else{
+                            cells_mas[j*9+i].value = `${i+1+j*3+2-9}`
+                            member_mas_row[j][i] = i+1+j*3+2-9
+                            member_mas_col[i][j] = i+1+j*3+2-9
+                        }
+                        
+                    }
+                    else{
+                        cells_mas[j*9+i].value = `${i+1+j*3+2}`
+                        member_mas_row[j][i] = i+1+j*3+2
+                        member_mas_col[i][j] = i+1+j*3+2
+                    }
+
+
+                }
+                else if(j>=3 && j<6){
+
+                    if(i+1+j*3+1>9){
+                        if(i+1+j*3+1-9 > 9){
+                            if(i+1+j*3+1-9 > 9*2){
+                                cells_mas[j*9+i].value = `${i+1+j*3+1-9*3}`
+                                member_mas_row[j][i] = i+1+j*3+1-9*3
+                                member_mas_col[i][j] = i+1+j*3+1-9*3
+                            }
+                            else{
+                                cells_mas[j*9+i].value = `${i+1+j*3+1-9*2}`
+                                member_mas_row[j][i] = i+1+j*3+1-9*2
+                                member_mas_col[i][j] = i+1+j*3+1-9*2
+                            }
+                                
+                        }
+                        else{
+                            cells_mas[j*9+i].value = `${i+1+j*3+1-9}`
+                            member_mas_row[j][i] = i+1+j*3+1-9
+                            member_mas_col[i][j] = i+1+j*3+1-9
+                        }
+                        
+                    }
+                    else{
+                        cells_mas[j*9+i].value = `${i+1+j*3+1}`
+                        member_mas_row[j][i] = i+1+j*3+1
+                        member_mas_col[i][j] = i+1+j*3+1
+                    }
+
+
+                }
+                else{
+
+                    if(i+1+j*3>9){
+                        if(i+1+j*3-9 > 9){
+                            if(i+1+j*3-9 > 9*2){
+                                cells_mas[j*9+i].value = `${i+1+j*3-9*3}`
+                                member_mas_row[j][i] = i+1+j*3-9*3
+                                member_mas_col[i][j] = i+1+j*3-9*3
+                            }
+                            else{
+                                cells_mas[j*9+i].value = `${i+1+j*3-9*2}`
+                                member_mas_row[j][i] = i+1+j*3-9*2
+                                member_mas_col[i][j] = i+1+j*3-9*2
+                            }
+                                
+                        }
+                        else{
+                            cells_mas[j*9+i].value = `${i+1+j*3-9}`
+                            member_mas_row[j][i] = i+1+j*3-9
+                            member_mas_col[i][j] = i+1+j*3-9
+                        }
+                        
+                    }
+                    else{
+                        cells_mas[j*9+i].value = `${i+1+j*3}`
+                        member_mas_row[j][i] = i+1+j*3
+                        member_mas_col[i][j] = i+1+j*3
+                    }
+
+                }
+                
+                
+                
+           
+        }
+    
     }
-    alert(member_mas_col)
-}
+}  
 
 function check(){
-alert(member_mas_col)
+    alert(member_mas_row)
 }

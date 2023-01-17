@@ -1,56 +1,50 @@
 var cells = document.getElementsByTagName('input');
 var cells_mas = [];
-var member_mas = [];
+var member_mas_row = [[], [], [], [], [], [], [], [], []];
+var member_mas_col = [[], [], [], [], [], [], [], [], []];
+// let minitab_mas:number[][] = [];
 for (var _i = 0, cells_1 = cells; _i < cells_1.length; _i++) {
     var cell = cells_1[_i];
     cells_mas.push(cell);
 }
+function clearing() {
+    console.log(member_mas_row.length);
+    for (var j = 0; j <= 8; j++) {
+        for (var i = 0; i <= 8; i++) {
+            member_mas_row[j][i] = 0;
+            member_mas_col[i][j] = 0;
+            cells_mas[j * 9 + i].value = '';
+            console.log(i);
+        }
+    }
+}
 function start() {
-    cells_mas[0].value = "".concat(Math.floor(Math.random() * 9 + 1));
-    var _loop_1 = function (i) {
-        function calc() {
-            var new_value = Math.floor(Math.random() * 9 + 1);
-            if (member_mas.includes(new_value)) {
-                calc();
-            }
-            else {
-                cells_mas[i].value = "".concat(new_value);
-                member_mas.push(new_value);
-            }
-        }
-        calc();
-    };
-    // for(let j =0; j<= 8; j++){
-    //     cells_mas[j*9].value=`${Math.floor(Math.random() * 9 + 1) }`
-    for (var i = 0; i <= 8; i++) {
-        _loop_1(i);
-    }
-    var _loop_2 = function (o) {
-        var _loop_3 = function (j) {
-            if (j == 1) {
-                function calc_col() {
-                    var new_value = Math.floor(Math.random() * 9 + 1);
-                    if (Number(cells_mas[j * o * 9 - 1].value) === new_value || Number(cells_mas[j * o * 9 - 9].value) === new_value) {
-                        calc_col();
-                    }
-                    else {
-                        cells_mas[j * 9].value = "".concat(new_value);
-                        member_mas.push(new_value);
-                    }
+    var _loop_1 = function (j) {
+        var _loop_2 = function (i) {
+            function calc() {
+                var new_value = Math.floor(Math.random() * 9 + 1);
+                if (member_mas_row[j].includes(new_value) || member_mas_col[i].includes(new_value)) {
+                    calc();
                 }
-                calc_col();
+                else {
+                    cells_mas[j * 9 + i].value = "".concat(new_value);
+                    member_mas_row[j][i] = new_value;
+                    member_mas_col[i][j] = new_value;
+                }
             }
+            calc();
         };
-        for (var j = 1; j <= 8; j++) {
-            _loop_3(j);
+        for (var i = 0; i <= 8; i++) {
+            _loop_2(i);
         }
     };
-    for (var o = 1; o <= 9; o++) {
-        _loop_2(o);
+    // cells_mas[0].value=`${Math.floor(Math.random() * 9 + 1) }`;
+    // member_mas_row[0][0]=Number(cells_mas[0].value);
+    for (var j = 0; j <= 8; j++) {
+        _loop_1(j);
     }
-    // }
-    alert(member_mas);
+    alert(member_mas_col);
 }
 function check() {
-    alert(cells_mas[0].value);
+    alert(member_mas_col);
 }

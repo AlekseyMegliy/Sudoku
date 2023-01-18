@@ -11,109 +11,114 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <button onclick="start()">start</button>
-    <button onclick="clearing()">clear</button>
-    <button onclick="check()">check</button>
+    <button class="start" onclick="start()">Start</button>
+    <button onclick="check()">Check</button>
+    <label for="empty">Numbet of empty cells: 
+        <input type="text" name="empty" placeholder="Numbet of empty cells" value="25" id="space_num">
+    </label>
+    
     <table>
         <tr>
-            <td><input type="text" value=1></td>
-            <td><input type="text" value=1></td>
-            <td><input type="text" value=1></td>
-            <td><input type="text" value=1></td>
-            <td><input type="text" value=1></td>
-            <td><input type="text" value=1></td>
-            <td><input type="text" value=1></td>
-            <td><input type="text" value=1></td>
-            <td><input type="text" value=1></td>
+            <td><input class="cell" type="text" value=' '></td>
+            <td><input class="cell" type="text" value=W></td>
+            <td><input class="cell" type="text" value=a></td>
+            <td><input class="cell" type="text" value=k></td>
+            <td><input class="cell" type="text" value=e></td>
+            <td><input class="cell" type="text" value=' '></td>
+            <td><input class="cell" type="text" value=t></td>
+            <td><input class="cell" type="text" value=h></td>
+            <td><input class="cell" type="text" value=e></td>
         </tr>
         <tr>
-            <td><input type="text" value=1></td>
-            <td><input type="text" value=1></td>
-            <td><input type="text" value=1></td>
-            <td><input type="text" value=1></td>
-            <td><input type="text" value=1></td>
-            <td><input type="text" value=1></td>
-            <td><input type="text" value=1></td>
-            <td><input type="text" value=1></td>
-            <td><input type="text" value=1></td>
+            <td><input class="cell" type="text" value=' '></td>
+            <td><input class="cell" type="text" value=' '></td>
+            <td><input class="cell" type="text" value=' '></td>
+            <td><input class="cell" type="text" value=' '></td>
+            <td><input class="cell" type="text" value=' '></td>
+            <td><input class="cell" type="text" value=' '></td>
+            <td><input class="cell" type="text" value=' '></td>
+            <td><input class="cell" type="text" value=' '></td>
+            <td><input class="cell" type="text" value=' '></td>
         </tr>
         <tr>
-            <td><input type="text" value=1></td>
-            <td><input type="text" value=1></td>
-            <td><input type="text" value=1></td>
-            <td><input type="text" value=1></td>
-            <td><input type="text" value=1></td>
-            <td><input type="text" value=1></td>
-            <td><input type="text" value=1></td>
-            <td><input type="text" value=1></td>
-            <td><input type="text" value=1></td>
+            <td><input class="cell" type="text" value=' '></td>
+            <td><input class="cell" type="text" value=f></td>
+            <td><input class="cell" type="text" value=u></td>
+            <td><input class="cell" type="text" value=k></td>
+            <td><input class="cell" type="text" value=c></td>
+            <td><input class="cell" type="text" value=" "></td>
+            <td><input class="cell" type="text" value=u></td>
+            <td><input class="cell" type="text" value=p></td>
+            <td><input class="cell" type="text" value=' '></td>
         </tr>
         <tr>
-            <td><input type="text" value=1></td>
-            <td><input type="text" value=1></td>
-            <td><input type="text" value=1></td>
-            <td><input type="text" value=1></td>
-            <td><input type="text" value=1></td>
-            <td><input type="text" value=1></td>
-            <td><input type="text" value=1></td>
-            <td><input type="text" value=1></td>
-            <td><input type="text" value=1></td>
+            <td><input class="cell" type="text" value=' '></td>
+            <td><input class="cell" type="text" value=S></td>
+            <td><input class="cell" type="text" value=a></td>
+            <td><input class="cell" type="text" value=m></td>
+            <td><input class="cell" type="text" value=u></td>
+            <td><input class="cell" type="text" value=r></td>
+            <td><input class="cell" type="text" value=a></td>
+            <td><input class="cell" type="text" value=i></td>
+            <td><input class="cell" type="text" value=' '></td>
         </tr>
         <tr>
-            <td><input type="text" value=1></td>
-            <td><input type="text" value=1></td>
-            <td><input type="text" value=1></td>
-            <td><input type="text" value=1></td>
-            <td><input type="text" value=1></td>
-            <td><input type="text" value=1></td>
-            <td><input type="text" value=1></td>
-            <td><input type="text" value=1></td>
-            <td><input type="text" value=1></td>
+            <td><input class="cell" type="text" value=' '></td>
+            <td><input class="cell" type="text" value=' '></td>
+            <td><input class="cell" type="text" value=' '></td>
+            <td><input class="cell" type="text" value=' '></td>
+            <td><input class="cell" type="text" value=' '></td>
+            <td><input class="cell" type="text" value=' '></td>
+            <td><input class="cell" type="text" value=' '></td>
+            <td><input class="cell" type="text" value=' '></td>
+            <td><input class="cell" type="text" value=' '></td>
         </tr>
         <tr>
-            <td><input type="text" value=1></td>
-            <td><input type="text" value=1></td>
-            <td><input type="text" value=1></td>
-            <td><input type="text" value=1></td>
-            <td><input type="text" value=1></td>
-            <td><input type="text" value=1></td>
-            <td><input type="text" value=1></td>
-            <td><input type="text" value=1></td>
-            <td><input type="text" value=1></td>
+            <td><input class="cell" type="text" value=W></td>
+            <td><input class="cell" type="text" value=e></td>
+            <td><input class="cell" type="text" value=' '></td>
+            <td><input class="cell" type="text" value=h></td>
+            <td><input class="cell" type="text" value=a></td>
+            <td><input class="cell" type="text" value=v></td>
+            <td><input class="cell" type="text" value=e></td>
+            <td><input class="cell" type="text" value=' '></td>
+            <td><input class="cell" type="text" value=a></td>
         </tr>
         <tr>
-            <td><input type="text" value=1></td>
-            <td><input type="text" value=1></td>
-            <td><input type="text" value=1></td>
-            <td><input type="text" value=1></td>
-            <td><input type="text" value=1></td>
-            <td><input type="text" value=1></td>
-            <td><input type="text" value=1></td>
-            <td><input type="text" value=1></td>
-            <td><input type="text" value=1></td>
+           
+            <td><input class="cell" type="text" value=' '></td>
+            <td><input class="cell" type="text" value='S'></td>
+            <td><input class="cell" type="text" value='u'></td>
+            <td><input class="cell" type="text" value='d'></td>
+            <td><input class="cell" type="text" value='o'></td>
+            <td><input class="cell" type="text" value='k'></td>
+            <td><input class="cell" type="text" value='u'></td>
+            <td><input class="cell" type="text" value=' '></td>
+            <td><input class="cell" type="text" value=' '></td>
         </tr>
         <tr>
-            <td><input type="text" value=1></td>
-            <td><input type="text" value=1></td>
-            <td><input type="text" value=1></td>
-            <td><input type="text" value=1></td>
-            <td><input type="text" value=1></td>
-            <td><input type="text" value=1></td>
-            <td><input type="text" value=1></td>
-            <td><input type="text" value=1></td>
-            <td><input type="text" value=1></td>
+            <td><input class="cell" type="text" value=' '></td>
+            <td><input class="cell" type="text" value=' '></td>
+            <td><input class="cell" type="text" value=' '></td>
+            <td><input class="cell" type="text" value=' '></td>
+            <td><input class="cell" type="text" value=' '></td>
+            <td><input class="cell" type="text" value=' '></td>
+            <td><input class="cell" type="text" value=' '></td>
+            <td><input class="cell" type="text" value=' '></td>
+            <td><input class="cell" type="text" value=' '></td>
         </tr>
         <tr>
-            <td><input type="text" value=1></td>
-            <td><input type="text" value=1></td>
-            <td><input type="text" value=1></td>
-            <td><input type="text" value=1></td>
-            <td><input type="text" value=1></td>
-            <td><input type="text" value=1></td>
-            <td><input type="text" value=1></td>
-            <td><input type="text" value=1></td>
-            <td><input type="text" value=1></td>
+            <td><input class="cell" type="text" value=t></td>
+            <td><input class="cell" type="text" value=o></td>
+            <td><input class="cell" type="text" value=' '></td>
+            <td><input class="cell" type="text" value='s'></td>
+            <td><input class="cell" type="text" value=o></td>
+            <td><input class="cell" type="text" value=l></td>
+            <td><input class="cell" type="text" value=v></td>
+            <td><input class="cell" type="text" value=e></td>
+            <td><input class="cell" type="text" value=' '></td>
         </tr>
+        
     </table>
 </body>
 <script src = "sudoku.js"></script>

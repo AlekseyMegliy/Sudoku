@@ -24,9 +24,22 @@ tr:nth-of-type(6) td{
 // }
 
 
-  
-  input{
+  .cell{
     padding: 30% 40%;
-    width: 10%;
-    
+    width: 15%;
+  }
+  .right{
+    background-color: rgba(0, 128, 0, 0.378);
+  }
+  .empty{
+    background-color: rgba(0, 13, 255, 0.363);
+  }
+  .wrong{
+    background-color: rgba(255, 0, 0, 0.363);
+  }
+  label{
+    display: flex;
+  }
+  #space_num{
+    width: 2%;
   }

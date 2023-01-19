@@ -5,41 +5,27 @@ table{
     height: $size;
     margin: 0 auto;
   }
-td:nth-of-type(3){
-  border-right:4px solid black ;
-}
-td:nth-of-type(6){
-  border-right:4px solid black ;
-}
-tr:nth-of-type(3) td{
-  border-bottom:4px solid black ;
-}
-tr:nth-of-type(6) td{
-  border-bottom:4px solid black ;
-}
-// @for $i from 28 through 28+9 {
-//   td:nth-of-type(#{$i}){
-//     border-bottom:2px solid black ;
-//   }
-// }
-
-
-  .cell{
+.cell{
     padding: 30% 40%;
     width: 15%;
+}
+@for $i from 1 through 2 {
+  td:nth-of-type(#{$i*3}){
+    border-right:4px solid black ;
   }
-  .right{
-    background-color: rgba(0, 128, 0, 0.378);
+  tr:nth-of-type(#{$i*3}) td{
+    border-bottom:4px solid black ;
   }
-  .empty{
-    background-color: rgba(0, 13, 255, 0.363);
-  }
-  .wrong{
-    background-color: rgba(255, 0, 0, 0.363);
-  }
-  label{
+}
+
+ 
+@each $cell_color, $color in (".right": rgba(2, 188, 2, 0.3), ".empty": rgba(0, 13, 255, 0.3), ".wrong": rgba(255, 0, 0, 0.3)) {
+    #{$cell_color} { background-color: $color;}
+}
+label{
     display: flex;
-  }
-  #space_num{
+}
+
+#space_num{
     width: 2%;
-  }
+}

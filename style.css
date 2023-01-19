@@ -4,11 +4,12 @@ table {
   margin: 0 auto;
 }
 
-td:nth-of-type(3) {
-  border-right: 4px solid black;
+.cell {
+  padding: 30% 40%;
+  width: 15%;
 }
 
-td:nth-of-type(6) {
+td:nth-of-type(3) {
   border-right: 4px solid black;
 }
 
@@ -16,25 +17,24 @@ tr:nth-of-type(3) td {
   border-bottom: 4px solid black;
 }
 
+td:nth-of-type(6) {
+  border-right: 4px solid black;
+}
+
 tr:nth-of-type(6) td {
   border-bottom: 4px solid black;
 }
 
-.cell {
-  padding: 30% 40%;
-  width: 15%;
-}
-
 .right {
-  background-color: rgba(0, 128, 0, 0.378);
+  background-color: rgba(2, 188, 2, 0.3);
 }
 
 .empty {
-  background-color: rgba(0, 13, 255, 0.363);
+  background-color: rgba(0, 13, 255, 0.3);
 }
 
 .wrong {
-  background-color: rgba(255, 0, 0, 0.363);
+  background-color: rgba(255, 0, 0, 0.3);
 }
 
 label {

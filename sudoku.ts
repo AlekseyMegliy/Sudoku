@@ -1,6 +1,6 @@
 let cells:HTMLCollectionOf<HTMLInputElement> = document.getElementsByClassName('cell');
-let space_num:HTMLInputElement = document.getElementById('space_num')
-let start_but:HTMLButtonElement = document.querySelector('.start')
+let space_num:HTMLInputElement | null = document.getElementById('space_num')
+let start_but:HTMLElement | HTMLButtonElement | null = document.getElementById('start')
 let cells_mas:Array<HTMLInputElement> = [];
 let member_mas_row:number[][] = [[],[],[],[],[],[],[],[],[]];
 let member_mas_col:number[][] = [[],[],[],[],[],[],[],[],[]];
@@ -11,7 +11,7 @@ for(let cell of cells){
     cells_mas.push(cell);
 }
 
-function start(){
+function start():void{
     
     
         for(let j=0; j<=8; j++){
@@ -122,7 +122,7 @@ function start(){
     let random_line:number=1;
     let swap_line:number[];
 
-    function random_row(){
+    function random_row():void{
         random_line = Math.floor(Math.random()*9)
         if((random_line+1)%3===0){
             let random_line_swap:number= Math.round(Math.random()+1)
@@ -149,7 +149,7 @@ function start(){
         }
     }
 
-    function random_col(){
+    function random_col():void{
         random_line = Math.floor(Math.random()*9)
         if((random_line+1)%3===0){
             let random_line_swap:number= Math.round(Math.random()+1)
@@ -193,7 +193,10 @@ function start(){
    
    
 
-    function space(num:number){
+    function space(num:number):void{
+        if(!num){
+            alert("Enter the number of empty cells")
+        }
         for(let i=0; i<num; i++){
             let random_rowcell:number = Math.floor(Math.random()*8)
             let random_colcell:number = Math.floor(Math.random()*8)
@@ -201,7 +204,7 @@ function start(){
 
         }
     }
-    space(Number(space_num.value));
+    space(Number(space_num!.value));
     
     for(let j=0; j<=8; j++){
         for(let i=0; i<=  8; i++){
@@ -217,12 +220,12 @@ function start(){
     
 }  
 
-function check(){
+function check():void{
     let wrong_empty:number=0
     for(let cell of cells){
         cell.toggleAttribute("readonly");
     }
-    start_but.toggleAttribute("disabled")
+    start_but!.toggleAttribute("disabled")
     for(let j=0; j<=8; j++){
         for(let i=0; i<=  8; i++){
             if(Number(cells_mas[j*9+i].value)===0){

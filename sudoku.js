@@ -1,6 +1,6 @@
 var cells = document.getElementsByClassName('cell');
 var space_num = document.getElementById('space_num');
-var start_but = document.querySelector('.start');
+var start_but = document.getElementById('start');
 var cells_mas = [];
 var member_mas_row = [[], [], [], [], [], [], [], [], []];
 var member_mas_col = [[], [], [], [], [], [], [], [], []];
@@ -165,6 +165,9 @@ function start() {
     var new_col_mas;
     new_col_mas = member_mas_col;
     function space(num) {
+        if (!num) {
+            alert("Enter the number of empty cells");
+        }
         for (var i = 0; i < num; i++) {
             var random_rowcell = Math.floor(Math.random() * 8);
             var random_colcell = Math.floor(Math.random() * 8);
